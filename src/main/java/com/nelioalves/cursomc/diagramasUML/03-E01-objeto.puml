@@ -1,0 +1,76 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object a1 {
+	- <<oid>> id = 1001
+	- nome = Michael Jackson
+	- nacionalidade = Americano
+}
+
+object a2 {
+	- <<oid>> id = 1002
+	- nome = Zé Ramalho
+	- nacionalidade = Brasileiro
+}
+
+object alb1 {
+	- <<oid>> id = 2001
+	- nome = album1
+	- ano = 2020
+}
+
+object alb2 {
+	- <<oid>> id = 2002
+	- nome = album2
+	- ano = 2019
+}
+
+object alb3 {
+	- <<oid>> id = 2003
+	- nome = album3
+	- ano = 2021
+}
+
+object m1 {
+	- <<oid>> id = 3001
+	- nome = musica1
+    - duracao = 2000
+}
+
+object m2 {
+	- <<oid>> id = 3002
+	- nome = musica2
+    - duracao = 3000
+}
+
+object m3 {
+	- <<oid>> id = 3003
+	- nome = musica3
+    - duracao = 2500
+}
+
+object m4 {
+	- <<oid>> id = 3004
+	- nome = musica4
+    - duracao = 1500
+}
+
+a1 -- alb1
+a1 -- alb2
+a1 -- alb3
+a2 -- alb3
+m1 -- alb1
+m2 -- alb2
+m3 -- alb2
+m4 -- alb3
+a1 -- m3 : autores
+a1 -- m4 : autores
+a1 -- m2 : autores
+a1 -- m1 : autores
+a1 -- m3 : interpretes
+a1 -- m4 : interpretes
+a1 -- m2 : interpretes
+a1 -- m1 : interpretes
+a2 -- m4 : interpretes
+
+@enduml

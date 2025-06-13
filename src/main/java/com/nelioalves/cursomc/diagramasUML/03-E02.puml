@@ -1,0 +1,51 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Campeonato {
+	- <<oid>> id : Integer
+    - ano : Integer
+}
+
+class Jogador {
+	- <<oid>> id : Integer
+    - nome : String
+    - nascimento : Date
+    - genero : String
+    - altura : Double
+}
+
+class Time {
+	- <<oid>> id : Integer
+	- nome : String
+}
+
+class Partida {
+	- <<oid>> id : Integer
+    - data : Date
+    - pontuacaoMandante : Integer
+    - pontuacaoVisitante : Integer
+}
+
+class Estadio {
+	- <<oid>> id : Integer
+    - nome : String
+}
+
+class Endereco {
+	- <<oid>> id : Integer
+    - logradouro : String
+    - numero : Integer
+    - complemento : String
+    - bairro : String
+}
+
+Partida "1" -- "1" Estadio : ocorre
+Partida "1" -- "1" Time : timeMandante
+Partida "1" -- "1" Time : timeVisitante
+Campeonato "1" -- "*" Partida : tem
+Estadio "1" -- "1" Endereco : possui
+Time "1" -- "1" Estadio : estádio-sede
+Time "1" -- "*" Jogador : possui
+Time "0..1" -- "1" Jogador : capitaoTime
+
+@enduml

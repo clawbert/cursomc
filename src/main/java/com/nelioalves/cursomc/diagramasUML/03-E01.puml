@@ -1,0 +1,27 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Artista {
+	- <<oid>> id : Integer
+	- nome : String
+	- nacionalidade : String
+}
+
+class Album {
+	- <<oid>> id : Integer
+	- nome : String
+	- ano : Integer
+}
+
+class Musica {
+	- <<oid>> id : Integer
+	- nome : String
+	- duracao : Integer
+}
+
+Album "1..*" -- "1..*" Musica : possui
+Artista "1..*" -- "*" Album : possui
+Musica "*" -- "1..*" Artista : interpreta
+Musica "*" -- "1..*" Artista : autor
+
+@enduml
