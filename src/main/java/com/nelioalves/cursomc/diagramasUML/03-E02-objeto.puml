@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object c1 {
+	id = 1
+	ano = 2017
+	nome = Copa de Handebol 2017
+}
+
+object p1 {
+	id = 1
+    data = 20/08/2017
+    pontuacaoMandante = 10
+    pontuacaoVisitante = 7
+}
+
+object p2 {
+	id = 2
+    data = 21/08/2017
+    pontuacaoMandante = 9
+    pontuacaoVisitante = 13
+}
+
+object t1 {
+	id = 1
+	nome = Flamengo
+}
+
+object t2 {
+	id = 2
+	nome = Corinthians
+}
+
+c1 -- p1
+c1 -- p2
+
+@enduml

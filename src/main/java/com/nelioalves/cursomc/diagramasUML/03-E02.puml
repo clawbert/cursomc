@@ -4,6 +4,7 @@
 class Campeonato {
 	- <<oid>> id : Integer
     - ano : Integer
+    - nome : String
 }
 
 class Jogador {
@@ -39,13 +40,13 @@ class Endereco {
     - bairro : String
 }
 
-Partida "1" -- "1" Estadio : ocorre
-Partida "1" -- "1" Time : timeMandante
-Partida "1" -- "1" Time : timeVisitante
+Partida "*" -- "1" Time : timeMandante
+Partida "*" -- "1" Time : timeVisitante
 Campeonato "1" -- "*" Partida : tem
+Campeonato "*" -- "*" Time : possui
 Estadio "1" -- "1" Endereco : possui
-Time "1" -- "1" Estadio : estádio-sede
+Time "1" -- "1" Estadio : sede
 Time "1" -- "*" Jogador : possui
-Time "0..1" -- "1" Jogador : capitaoTime
+Time "0..1" -- "0..1" Jogador : capitao
 
 @enduml
