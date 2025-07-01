@@ -20,13 +20,20 @@ class Postagem {
 
 class Foto {
 	- <<oid>> uri : String
+	- instanteDePostagem : Date
 }
 
 class Album {
 	- <<oid>> id : Integer
 	- titulo : String
+	- instanteDePostagem : Date
 }
 
-Usuario "1" --> "0..*" Postagem : publica
+Usuario "1" -- "0..*" Postagem : publica
+Usuario "*" -- "*" Usuario : seguir
+Foto "*" -- "0..1" Postagem : anexar
+Foto "*" -- "1" Usuario : associada
+Album "0..1" -- "*" Foto : possui
+Album "1" -- "1" Usuario : pertence
 
 @enduml

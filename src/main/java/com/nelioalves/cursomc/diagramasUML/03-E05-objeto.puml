@@ -1,0 +1,59 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object c1 {
+	id = 1
+	nome = São Paulo
+	estado = SP
+	website = saopaulo.gov.br
+}
+
+object h1 {
+	id = 1
+	nome = Ibis
+	valorDiaria = 200.00
+}
+
+object h2 {
+	id = 2
+	nome = Star
+	valorDiaria = 300.00
+}
+
+object r1 {
+	id = 1
+	nome = Sabor Legal
+	valorRefeicao = 30.00
+}
+
+object r2 {
+	id = 2
+	nome = Vegetariano
+	valorRefeicao = 40.00
+}
+
+object p1 {
+	id = 1
+	dataViagem = 20/12/2017
+	diasPermanencia = 10
+	quantidadeRefeicaoPorDia = 2
+}
+
+object p2 {
+	id = 2
+	dataViagem = 10/01/2018
+	diasPermanencia = 7
+	quantidadeRefeicaoPorDia = null
+}
+
+c1 -- h1
+c1 -- h2
+c1 -- r1
+c1 -- r2
+p1 -- c1
+p1 -- h1
+p1 -- r2
+p2 -- c1
+p2 -- h2
+
+@enduml

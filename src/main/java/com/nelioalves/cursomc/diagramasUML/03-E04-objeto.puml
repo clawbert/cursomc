@@ -1,0 +1,82 @@
+@startuml
+'https://plantuml.com/object-diagram
+
+object a1 {
+	id = 1
+    nome = Curso de HTML
+    descricao = Aprenda HTML de forma prática
+    preco = 80.00
+}
+
+object a2 {
+	id = 2
+    nome = Oficina de Github
+    descricao = Controle de versões de seus projetos
+    preco = 50.00
+}
+
+object c1 {
+	id = 1
+	descricao = Curso
+}
+
+object c2 {
+	id = 2
+	descricao = Oficina
+}
+
+object p1 {
+	id = 1
+	nome = José Silva
+	email = jose@gmail.com
+}
+
+object p2 {
+	id = 2
+	nome = Thiago Faria
+	email = thiago@gmail.com
+}
+
+object p3 {
+	id = 3
+	nome = Maria do Rosário
+	email = maria@gmail.com
+}
+
+object p4 {
+	id = 4
+	nome = Teresa Silva
+	email = teresa@gmail.com
+}
+
+object b1 {
+	id = 1
+	dataInicio = 25/09/2017 08:00:00
+	dataFim = 25/09/2017 11:00:00
+}
+
+object b2 {
+	id = 2
+	dataInicio = 25/09/2017 14:00:00
+	dataFim = 25/09/2017 18:00:00
+}
+
+object b3 {
+	id = 3
+	dataInicio = 26/09/2017 08:00:00
+	dataFim = 26/09/2017 11:00:00
+}
+
+a1 -- c1
+a1 -- b1
+a2 -- c2
+a2 -- b2
+a2 -- b3
+p1 -- a1
+p1 -- a2
+p2 -- a1
+p3 -- a1
+p3 -- a2
+p4 -- a2
+
+@enduml

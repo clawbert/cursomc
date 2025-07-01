@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Atividade {
+	- <<oid>> id : Integer
+	- nome : String
+	- descricao : String
+	- preco : Double
+}
+
+class BlocoHorario {
+	- <<oid>> id : Integer
+	- dataInicio : Date
+	- dataFim : Date
+}
+
+class Participante {
+	- <<oid>> id : Integer
+	- nome : String
+	- email : String
+}
+
+class Categoria {
+	- <<oid>> id : Integer
+	- descricao : String
+}
+
+Atividade "1" -- "1..*" BlocoHorario
+Atividade "1..*" -- "*" Participante
+Atividade "*" -- "1" Categoria
+
+@enduml

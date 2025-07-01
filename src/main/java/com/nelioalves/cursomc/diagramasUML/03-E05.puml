@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Cidade {
+	- <<oid>> id : Integer
+	- nome : String
+	- estado : String
+	- website : String
+}
+
+class Restaurante {
+	- <<oid>> id : Integer
+	- nome : String
+	- valorRefeicao : Double
+}
+
+class Hotel {
+	- <<oid>> id : Integer
+	- nome : String
+	- valorDiaria : Double
+}
+
+class Pacote {
+	- <<oid>> id : Integer
+	- dataViagem : Date
+	- diasPermanencia : Integer
+	- quantidadeRefeicaoPorDia : Integer
+}
+
+Cidade "1" -- "1..*" Restaurante : possui
+Cidade "1" -- "1..*" Hotel : possui
+Pacote "*" -- "1" Cidade : possui
+Pacote "*" -- "1" Hotel : possui
+Pacote "*" -- "0..1" Restaurante : inclui
+
+@enduml

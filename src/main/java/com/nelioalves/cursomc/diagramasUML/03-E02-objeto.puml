@@ -31,7 +31,81 @@ object t2 {
 	nome = Corinthians
 }
 
+object j1 {
+	id = 1
+	nome = João da Silva
+	nascimento = 11/07/1990
+	genero = M
+	altura = 1.81
+}
+
+object j2 {
+	id = 2
+	nome = Marco Tulio
+	nascimento = 21/03/1989
+	genero = M
+	altura = 1.74
+}
+
+object j3 {
+	id = 3
+	nome = Tulio Mendes
+	nascimento = 03/12/1991
+	genero = M
+	altura = 1.73
+}
+
+object j4 {
+	id = 4
+	nome = Carlos Teles
+	nascimento = 14/08/1987
+	genero = M
+	altura = 1.86
+}
+
+object e1 {
+	id = 1
+	nome = Centro Esportivo Fla
+}
+
+object e2 {
+	id = 2
+	nome = Arena Gaviões
+}
+
+object end1 {
+	id = 1
+	logradouro = Rua da Madeira
+	numero = 201
+	complemento =
+	bairro = Silveira
+}
+
+object end2 {
+	id = 2
+	logradouro = Avenida Fiel
+	numero = 1732
+	complemento = Setor 2
+	bairro = Corre Ventos
+}
+
 c1 -- p1
 c1 -- p2
+t2 -- j3
+t2 -- j4
+t2 -- j4 : capitao
+t1 -- j1
+t1 -- j1 : capitao
+t1 -- j2
+t1 -- p1 : timeMandante
+t2 -- p1 : timeVisitante
+t1 -- p2 : timeVisitante
+t2 -- p2 : timeMandante
+t1 -- c1
+t2 -- c1
+end1 -- e1
+t1 -- e1
+t2 -- e2
+end2 -- e2
 
 @enduml
