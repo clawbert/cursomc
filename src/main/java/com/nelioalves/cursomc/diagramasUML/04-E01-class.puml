@@ -1,0 +1,62 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Plataforma {
+	- <<oid>> id : Integer
+	- nome : String
+}
+
+class JogoPlataforma {
+	- precoDiario : Double
+}
+
+class Jogo {
+	- <<oid>> id : Integer
+	- titulo : String
+}
+
+class ItemDeLocacao {
+	- diasLocacao : Integer
+	- quantidade : Integer
+}
+
+class Locacao {
+	- <<oid>> id : Integer
+	- data : Date
+}
+
+class Cliente {
+	- <<oid>> id : Integer
+	- nome : String
+	- email : String
+	- telefone : String
+	- senha : String
+}
+
+class Utilizacao {
+	<<oid>> id : Integer
+	- inicio : Date
+	- fim : Date
+}
+
+class Console {
+	- <<oid>> id : Integer
+	- nome : String
+	- precoPorHora : Double
+}
+
+class Acessorio {
+	- <<oid>> id : Integer
+	- nome : String
+}
+
+Cliente "1" -- "*" Locacao
+Cliente "1" -- "*" Utilizacao
+Console "1" -- "*" Utilizacao
+Locacao "*" -- ItemDeLocacao
+JogoPlataforma "1..*" -- ItemDeLocacao
+JogoPlataforma -- "*" Jogo
+JogoPlataforma -- "1..*" Plataforma
+Console "*" o-- "*" Acessorio
+
+@enduml

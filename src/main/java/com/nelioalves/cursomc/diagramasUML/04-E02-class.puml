@@ -1,0 +1,49 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Curso {
+	- <<oid>> id : Integer
+	- nome : String
+	- cargaHoraria : Integer
+	- valor : Double
+	- notaPrevista : Double
+	- notaMinima : Double
+}
+
+class Turma {
+	- <<oid>> id : Integer
+	- numeroTurma : String
+	- dataInicio : Date
+	- vagas : Integer
+}
+
+class Matricula {
+	- dataMatricula : Date
+	- prestacoes : Integer
+}
+
+class Aluno {
+	- <<oid>> cpf : String
+	- nome : String
+	- dataNascimento : Date
+}
+
+class Avaliacao {
+	- <<oid>> id : Integer
+	- nota : Double
+	- data : Date
+}
+
+class Resultado {
+	- notaObtida : Double
+}
+
+Aluno "*" -- "1" Matricula
+Turma "1..*" -- "1" Matricula
+Curso "1" -- "*" Turma
+Aluno "1" -- "*" Avaliacao
+Turma "1" -- "*" Avaliacao
+Aluno "*" -- "1" Resultado
+Avaliacao "*" -- "1" Resultado
+
+@enduml
