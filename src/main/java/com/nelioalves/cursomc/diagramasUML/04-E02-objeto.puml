@@ -1,6 +1,86 @@
 @startuml
 'https://plantuml.com/object-diagram
 
+object c1 {
+	id = 1
+	nome = HTML Básico
+	cargaHoraria = 10
+	valor = 80.00
+	notaPrevista = 100.00
+	notaMinima = 70.00
+}
 
+object t1 {
+	id = 1
+	numeroTurma = 1
+	dataInicio = 10/09/2017
+	vagas = 30
+}
+
+object a1 {
+	cpf = 736376983-19
+	nome = Carlos Silva
+	dataNascimento = 21/07/1990
+}
+
+object a2 {
+	cpf = 353847901-122
+	nome = Maria Clara
+	dataNascimento = 03/09/1991
+}
+
+object m1 {
+	dataMatricula = 05/09/2017
+	prestacoes = 6
+}
+
+object m2 {
+	dataMatricula = 06/09/2017
+	prestacoes = 12
+}
+
+object av1 {
+	id = 1
+	nota = 40.0
+	data = 20/10/2017
+}
+
+object av2 {
+	id = 2
+	nota = 60.0
+	data = 30/11/2017
+}
+
+object r1 {
+	notaObtida = 35.0
+}
+
+object r2 {
+	notaObtida = 36.5
+}
+
+object r3 {
+	notaObtida = 47.0
+}
+
+object r4 {
+	notaObtida = 52.4
+}
+
+c1 -- t1
+t1 -- m1
+a1 -- m1
+a2 -- m2
+t1 -- m2
+av1 -- t1
+av2 -- t1
+a1 -- r1
+av1 -- r1
+a2 -- r2
+av1 -- r2
+a1 -- r3
+av2 -- r3
+a2 -- r4
+av2 -- r4
 
 @enduml
