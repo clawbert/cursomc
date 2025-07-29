@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Usuario {
+	- <<oid>> id : Integer
+	- nome : String
+	- telefone : String
+	- email : String
+}
+
+class Emprestimo {
+	- <<oid>> id : Integer
+	- dataEmprestimo : Date
+	- dataDevolucao : Date
+}
+
+class Livro {
+	- <<oid>> id : Integer
+	- titulo : String
+	- numeroPaginas : Integer
+	- multaDiaria : Double
+}
+
+class Genero {
+	- <<oid>> id : Integer
+	- descricao : String
+}
+
+class Editora {
+	- <<oid>> id : Integer
+	- descricao : String
+}
+
+class Colecao {
+	- <<oid>> id : Integer
+	- nome : String
+}
+
+Usuario "1" -- "*" Emprestimo
+Livro "1" -- "*" Emprestimo
+Livro "*" --* "0..1" Colecao
+Livro "*" -- "1" Genero
+Livro "*" -- "1" Editora
+
+
+@enduml
